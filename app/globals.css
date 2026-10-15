@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-ink-950 font-body text-zinc-200 antialiased;
+  background-image:
+    radial-gradient(900px 500px at 80% -10%, rgba(201,161,74,.16), transparent 60%),
+    radial-gradient(700px 500px at -10% 40%, rgba(201,161,74,.08), transparent 60%);
+  background-attachment: fixed;
+}
+::selection { background: rgba(201,161,74,.35); }
+h1, h2, h3 { @apply font-display; }
+
+@layer components {
+  .gold-text { @apply bg-clip-text text-transparent animate-shimmer; background-image: linear-gradient(90deg,#c9a14a,#f8ecc9,#c9a14a,#f8ecc9); background-size: 200% auto; }
+  .panel { @apply rounded-3xl border border-gold-500/20 bg-white/[0.03] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.45)]; }
+  .hair { @apply border-gold-500/20; }
+  .btn-gold { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-gold-300 to-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_8px_30px_rgba(201,161,74,.25)] transition hover:brightness-110 active:translate-y-px disabled:opacity-50; }
+  .ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/30 bg-transparent px-5 py-2 text-sm font-medium text-gold-200 transition hover:bg-gold-500/10 active:translate-y-px; }
+  .input { @apply w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-gold-500/60 focus:ring-4 focus:ring-gold-500/10; }
+  .lbl { @apply mb-1.5 block text-xs font-medium uppercase tracking-[.14em] text-gold-400/80; }
+  .chip { @apply rounded-full border border-gold-500/25 bg-gold-500/5 px-3 py-1 text-xs text-gold-200; }
+}
